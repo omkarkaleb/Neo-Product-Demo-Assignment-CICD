@@ -16,6 +16,9 @@
 		92E2601F27B6276E007C0B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E2601D27B6276E007C0B70 /* LaunchScreen.storyboard */; };
 		92E2602A27B6276F007C0B70 /* Neo_Product_Demo_AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2602927B6276F007C0B70 /* Neo_Product_Demo_AssignmentTests.swift */; };
 		92E2603527B6276F007C0B70 /* Neo_Product_Demo_AssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2603427B6276F007C0B70 /* Neo_Product_Demo_AssignmentUITests.swift */; };
+		92E2604327B62EEF007C0B70 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2604227B62EEF007C0B70 /* DetailViewController.swift */; };
+		92E2604527B62F0C007C0B70 /* ProdListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2604427B62F0C007C0B70 /* ProdListTableViewCell.swift */; };
+		92E2604727B633AE007C0B70 /* Prod Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2604627B633AE007C0B70 /* Prod Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		92E2603027B6276F007C0B70 /* Neo Product Demo AssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neo Product Demo AssignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E2603427B6276F007C0B70 /* Neo_Product_Demo_AssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neo_Product_Demo_AssignmentUITests.swift; sourceTree = "<group>"; };
 		92E2603627B6276F007C0B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92E2604227B62EEF007C0B70 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		92E2604427B62F0C007C0B70 /* ProdListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdListTableViewCell.swift; sourceTree = "<group>"; };
+		92E2604627B633AE007C0B70 /* Prod Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prod Model.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 				92E2601D27B6276E007C0B70 /* LaunchScreen.storyboard */,
 				92E2602027B6276E007C0B70 /* Info.plist */,
 				92E2601827B62769007C0B70 /* Neo_Product_Demo_Assignment.xcdatamodeld */,
+				92E2604227B62EEF007C0B70 /* DetailViewController.swift */,
+				92E2604427B62F0C007C0B70 /* ProdListTableViewCell.swift */,
+				92E2604627B633AE007C0B70 /* Prod Model.swift */,
 			);
 			path = "Neo Product Demo Assignment";
 			sourceTree = "<group>";
@@ -261,10 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E2604527B62F0C007C0B70 /* ProdListTableViewCell.swift in Sources */,
 				92E2601427B62769007C0B70 /* ViewController.swift in Sources */,
 				92E2601027B62769007C0B70 /* AppDelegate.swift in Sources */,
+				92E2604327B62EEF007C0B70 /* DetailViewController.swift in Sources */,
 				92E2601A27B62769007C0B70 /* Neo_Product_Demo_Assignment.xcdatamodeld in Sources */,
 				92E2601227B62769007C0B70 /* SceneDelegate.swift in Sources */,
+				92E2604727B633AE007C0B70 /* Prod Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
