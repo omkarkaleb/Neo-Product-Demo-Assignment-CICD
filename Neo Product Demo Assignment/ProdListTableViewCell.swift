@@ -17,11 +17,12 @@ class ProdListTableViewCell: UITableViewCell {
     @IBOutlet weak var prodList_like: UIButton!
     
     var product_id: Int = 0
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        checkLike()
+        //checkLike(id: Int16(product_id))
     }
+
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -31,15 +32,33 @@ class ProdListTableViewCell: UITableViewCell {
     @IBAction func likeBtnAction(_ sender: Any) {
         if prodList_like.isSelected == true {
             prodList_like.isSelected = false
+            print(product_id)
+            deleteItem(id: Int16(product_id))
         }else{
             prodList_like.isSelected = true
-            deleteItem(id: 444)
-            //createItem(id: Int16(product_id))
+            //print(product_id)
+            createItem(id: Int16(product_id))
         }
     }
-    func checkLike() {
-        //
-    }
+//    func checkLike(id: Int16) -> Bool {
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prod_item")
+//        let filter = "\(id)"
+//        let predicate = NSPredicate(format: "id = %@", filter)
+//        fetchRequest.predicate = predicate
+//        var results: [Any]
+//        var tt: Bool = false
+//        do {
+//            results = try context.fetch(fetchRequest)
+//            if results.isEmpty == true {
+//                tt = false
+//            }else{
+//                tt = true
+//            }
+//        } catch  {
+//            //error
+//        }
+//        return tt
+//    }
     func createItem(id: Int16){
         let newItem = Prod_item(context: context)
         newItem.id = id
@@ -54,10 +73,11 @@ class ProdListTableViewCell: UITableViewCell {
         let filter = "\(id)"
         let predicate = NSPredicate(format: "id = %@", filter)
         fetchRequest.predicate = predicate
-        print(fetchRequest)
         do {
             let results = try context.fetch(fetchRequest)
-            print(results)
+            print(results[0] as! NSManagedObject)
+            context.delete(results[0] as! NSManagedObject)
+            try context.save()
         } catch  {
             //error
         }

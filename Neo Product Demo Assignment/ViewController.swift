@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension UIImageView {
     
@@ -45,6 +46,26 @@ class ViewController: UIViewController {
         }
     }
     
+    func checkLike(id: Int16) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prod_item")
+        let filter = "\(id)"
+        let predicate = NSPredicate(format: "id = %@", filter)
+        fetchRequest.predicate = predicate
+        var results: [Any]
+        var tt: Bool = false
+        do {
+            results = try context.fetch(fetchRequest)
+            if results.isEmpty == true {
+                tt = false
+            }else{
+                tt = true
+            }
+        } catch  {
+            //error
+        }
+        return tt
+    }
+    
     func jsonParse(completed: @escaping () -> ()){
         guard let url = URL(string: urlString) else {
             return
@@ -79,11 +100,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProdListTable.dequeueReusableCell(withIdentifier: "cell") as! ProdListTableViewCell
         let cellIndex = indexPath.row
-        cell.prodList_name.text = prodlistdata[cellIndex].name
+        cell.prodList_name.text = "\(prodlistdata[cellIndex].id)"
         cell.prodList_price.text = "Rs. \(prodlistdata[cellIndex].cost)"
         cell.prodList_producer.text = prodlistdata[cellIndex].producer
         cell.prodList_image.downloaded(from: prodlistdata[cellIndex].product_images)
         cell.product_id = prodlistdata[cellIndex].id
+        
+        if checkLike(id: Int16(prodlistdata[cellIndex].id)) == true {
+            cell.prodList_like.isSelected = true
+        }else {
+            cell.prodList_like.isSelected = false
+        }
         
         return cell
     }
