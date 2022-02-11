@@ -60,6 +60,9 @@
                                                     </constraints>
                                                     <state key="normal" image="heart"/>
                                                     <state key="selected" image="heart-2"/>
+                                                    <connections>
+                                                        <action selector="likeBtnAction:" destination="Bzo-Qo-qab" eventType="touchUpInside" id="vAv-xA-qKw"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -99,7 +102,7 @@
         <!--Product Details-->
         <scene sceneID="mRE-Hb-ceS">
             <objects>
-                <viewController title="Product Details" id="Hxf-Yf-lsq" customClass="DetailViewController" customModule="Neo_Product_Demo_Assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailViewController" title="Product Details" id="Hxf-Yf-lsq" customClass="DetailViewController" customModule="Neo_Product_Demo_Assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iRU-vA-oW1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,41 +113,43 @@
                                     <constraint firstAttribute="height" constant="300" id="T16-bi-PJ9"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Solid Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7v-Ky-ded">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solid Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7v-Ky-ded">
                                 <rect key="frame" x="10" y="384" width="314" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="IOx-JL-HsE"/>
-                                    <constraint firstAttribute="height" constant="32" id="phx-vC-f1w"/>
+                                    <constraint firstAttribute="width" constant="314" id="pjU-iX-Ns5"/>
+                                    <constraint firstAttribute="height" constant="32" id="ut5-vH-Icd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0M-3v-Olw">
-                                <rect key="frame" x="10" y="427" width="37" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rs. 343232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xel-ax-hex">
-                                <rect key="frame" x="10" y="483" width="133" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs. 343232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xel-ax-hex">
+                                <rect key="frame" x="10" y="480" width="200" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="1M4-cC-Sxj"/>
+                                    <constraint firstAttribute="height" constant="32" id="VKz-0m-bq6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dx-Gm-M7J">
-                                <rect key="frame" x="218" y="483" width="100" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dx-Gm-M7J">
+                                <rect key="frame" x="284" y="480" width="120" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="GEk-MA-dmZ"/>
+                                    <constraint firstAttribute="width" constant="120" id="qEa-wZ-3k8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.91372549020000005" green="0.10980392160000001" blue="0.1019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-SH-ov2">
-                                <rect key="frame" x="10" y="538" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-SH-ov2">
+                                <rect key="frame" x="10" y="536" width="300" height="140"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="efZ-77-wXK"/>
+                                    <constraint firstAttribute="width" constant="300" id="hIP-pH-n7r"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -157,18 +162,39 @@
                                 </constraints>
                                 <state key="normal" image="heart"/>
                                 <state key="selected" image="heart-2"/>
+                                <connections>
+                                    <action selector="likeBtnAction:" destination="Hxf-Yf-lsq" eventType="touchUpInside" id="7TE-LI-fhS"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lelo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0M-3v-Olw">
+                                <rect key="frame" x="10" y="426" width="314" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="9R1-b5-VDZ"/>
+                                    <constraint firstAttribute="width" constant="314" id="nXB-no-h6O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yI8-JL-hOu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="C7v-Ky-ded" firstAttribute="leading" secondItem="yI8-JL-hOu" secondAttribute="leading" constant="10" id="0bX-Vf-OqY"/>
+                            <constraint firstItem="F5Y-SH-ov2" firstAttribute="top" secondItem="xel-ax-hex" secondAttribute="bottom" constant="24" id="335-OB-aax"/>
                             <constraint firstItem="yI8-JL-hOu" firstAttribute="trailing" secondItem="Ea0-0v-2pa" secondAttribute="trailing" constant="10" id="Dt2-56-Js0"/>
-                            <constraint firstItem="C7v-Ky-ded" firstAttribute="leading" secondItem="yI8-JL-hOu" secondAttribute="leading" constant="10" id="OzX-rd-QoE"/>
+                            <constraint firstItem="xel-ax-hex" firstAttribute="leading" secondItem="yI8-JL-hOu" secondAttribute="leading" constant="10" id="JV0-eC-JdM"/>
+                            <constraint firstItem="yI8-JL-hOu" firstAttribute="trailing" secondItem="3Dx-Gm-M7J" secondAttribute="trailing" constant="10" id="NVZ-jg-r9T"/>
                             <constraint firstItem="yI8-JL-hOu" firstAttribute="trailing" secondItem="ESE-y4-AkS" secondAttribute="trailing" constant="10" id="PeI-Ql-Fyp"/>
-                            <constraint firstItem="C7v-Ky-ded" firstAttribute="top" secondItem="ESE-y4-AkS" secondAttribute="bottom" constant="20" id="Yyq-Sc-YqG"/>
+                            <constraint firstItem="x0M-3v-Olw" firstAttribute="leading" secondItem="yI8-JL-hOu" secondAttribute="leading" constant="10" id="ZAX-Qk-oxu"/>
+                            <constraint firstItem="C7v-Ky-ded" firstAttribute="top" secondItem="ESE-y4-AkS" secondAttribute="bottom" constant="20" id="amJ-aW-y2U"/>
+                            <constraint firstItem="F5Y-SH-ov2" firstAttribute="leading" secondItem="yI8-JL-hOu" secondAttribute="leading" constant="10" id="dla-I7-1wo"/>
                             <constraint firstItem="Ea0-0v-2pa" firstAttribute="top" secondItem="ESE-y4-AkS" secondAttribute="bottom" constant="20" id="ggj-1d-Oh4"/>
                             <constraint firstItem="ESE-y4-AkS" firstAttribute="top" secondItem="yI8-JL-hOu" secondAttribute="top" constant="20" id="lz5-4F-0UF"/>
                             <constraint firstItem="ESE-y4-AkS" firstAttribute="leading" secondItem="yI8-JL-hOu" secondAttribute="leading" constant="10" id="nir-b9-5gn"/>
+                            <constraint firstItem="xel-ax-hex" firstAttribute="top" secondItem="x0M-3v-Olw" secondAttribute="bottom" constant="30" id="sGm-Kg-b6d"/>
+                            <constraint firstItem="x0M-3v-Olw" firstAttribute="top" secondItem="C7v-Ky-ded" secondAttribute="bottom" constant="10" id="tIN-J8-wyv"/>
+                            <constraint firstItem="3Dx-Gm-M7J" firstAttribute="top" secondItem="x0M-3v-Olw" secondAttribute="bottom" constant="30" id="xSn-Ou-boD"/>
                         </constraints>
                     </view>
                     <connections>

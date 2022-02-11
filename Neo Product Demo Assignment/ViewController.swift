@@ -78,10 +78,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProdListTable.dequeueReusableCell(withIdentifier: "cell") as! ProdListTableViewCell
-        cell.prodList_name.text = prodlistdata[indexPath.row].name
-        cell.prodList_price.text = "Rs. \(prodlistdata[indexPath.row].cost)"
-        cell.prodList_producer.text = prodlistdata[indexPath.row].producer
-        cell.prodList_image.downloaded(from: prodlistdata[indexPath.row].product_images)
+        let cellIndex = indexPath.row
+        cell.prodList_name.text = prodlistdata[cellIndex].name
+        cell.prodList_price.text = "Rs. \(prodlistdata[cellIndex].cost)"
+        cell.prodList_producer.text = prodlistdata[cellIndex].producer
+        cell.prodList_image.downloaded(from: prodlistdata[cellIndex].product_images)
+        cell.product_id = prodlistdata[cellIndex].id
         
         return cell
     }
@@ -90,4 +92,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         180
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: "ProductDetailViewController") as? DetailViewController
+        vc?.prod_id = prodlistdata[indexPath.row].id
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
