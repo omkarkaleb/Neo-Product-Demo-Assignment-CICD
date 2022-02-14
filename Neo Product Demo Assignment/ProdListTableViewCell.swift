@@ -32,54 +32,10 @@ class ProdListTableViewCell: UITableViewCell {
     @IBAction func likeBtnAction(_ sender: Any) {
         if prodList_like.isSelected == true {
             prodList_like.isSelected = false
-            print(product_id)
-            deleteItem(id: Int16(product_id))
+            Like_Checker_Instance.deleteItem(id: Int16(product_id))
         }else{
             prodList_like.isSelected = true
-            //print(product_id)
-            createItem(id: Int16(product_id))
-        }
-    }
-//    func checkLike(id: Int16) -> Bool {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prod_item")
-//        let filter = "\(id)"
-//        let predicate = NSPredicate(format: "id = %@", filter)
-//        fetchRequest.predicate = predicate
-//        var results: [Any]
-//        var tt: Bool = false
-//        do {
-//            results = try context.fetch(fetchRequest)
-//            if results.isEmpty == true {
-//                tt = false
-//            }else{
-//                tt = true
-//            }
-//        } catch  {
-//            //error
-//        }
-//        return tt
-//    }
-    func createItem(id: Int16){
-        let newItem = Prod_item(context: context)
-        newItem.id = id
-        do {
-            try context.save()
-        } catch {
-            //error
-        }
-    }
-    func deleteItem(id: Int16){
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prod_item")
-        let filter = "\(id)"
-        let predicate = NSPredicate(format: "id = %@", filter)
-        fetchRequest.predicate = predicate
-        do {
-            let results = try context.fetch(fetchRequest)
-            print(results[0] as! NSManagedObject)
-            context.delete(results[0] as! NSManagedObject)
-            try context.save()
-        } catch  {
-            //error
+            Like_Checker_Instance.createItem(id: Int16(product_id))
         }
     }
 }

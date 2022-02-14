@@ -16,6 +16,7 @@ struct ProductListData: Codable {
     var name: String
     var producer: String
     var product_images: String
+    var description: String
     var cost: Int
     var rating: Int
 }

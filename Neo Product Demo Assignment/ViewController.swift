@@ -45,6 +45,11 @@ class ViewController: UIViewController {
             self.ProdListTable.reloadData()
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        jsonParse {
+            self.ProdListTable.reloadData()
+        }
+    }
     
     func checkLike(id: Int16) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prod_item")
@@ -100,7 +105,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProdListTable.dequeueReusableCell(withIdentifier: "cell") as! ProdListTableViewCell
         let cellIndex = indexPath.row
-        cell.prodList_name.text = "\(prodlistdata[cellIndex].id)"
+        cell.prodList_name.text = "\(prodlistdata[cellIndex].name)"
         cell.prodList_price.text = "Rs. \(prodlistdata[cellIndex].cost)"
         cell.prodList_producer.text = prodlistdata[cellIndex].producer
         cell.prodList_image.downloaded(from: prodlistdata[cellIndex].product_images)
@@ -121,7 +126,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: "ProductDetailViewController") as? DetailViewController
-        vc?.prod_id = prodlistdata[indexPath.row].id
+        let cellIndex = indexPath.row
+        vc?.prod_id = prodlistdata[cellIndex].id
+        vc?.prod_imagev = prodlistdata[cellIndex].product_images
+        vc?.prod_namev = prodlistdata[cellIndex].name
+        vc?.prod_producerv = prodlistdata[cellIndex].producer
+        vc?.prod_ratingv = "\(prodlistdata[cellIndex].rating)"
+        vc?.prod_pricev = "\(prodlistdata[cellIndex].cost)"
+        vc?.prod_descriptionv = prodlistdata[cellIndex].description
+        if checkLike(id: Int16(prodlistdata[cellIndex].id)) == true {
+            vc?.prod_likev = true
+        }else {
+            vc?.prod_likev = false
+        }
         self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
