@@ -17,7 +17,8 @@ class ProdListTableViewCell: UITableViewCell {
     @IBOutlet weak var prodList_like: UIButton!
     
     var product_id: Int = 0
-    
+    var Like_Checker_Service: LikeChecker? = nil
+
     override func awakeFromNib() {
         super.awakeFromNib()
         //checkLike(id: Int16(product_id))
@@ -30,12 +31,13 @@ class ProdListTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func likeBtnAction(_ sender: Any) {
+        guard let LCS = Like_Checker_Service else { return }
         if prodList_like.isSelected == true {
             prodList_like.isSelected = false
-            Like_Checker_Instance.deleteItem(id: Int16(product_id))
+            LCS.deleteItem(id: Int16(product_id))
         }else{
             prodList_like.isSelected = true
-            Like_Checker_Instance.createItem(id: Int16(product_id))
+            LCS.createItem(id: Int16(product_id))
         }
     }
 }

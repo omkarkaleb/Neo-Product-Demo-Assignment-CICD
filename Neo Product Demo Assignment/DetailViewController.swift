@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var prod_description: UITextView!
     @IBOutlet weak var prod_like: UIButton!
     
+    var Like_Checker_Service: LikeChecker? = nil
+    
     var prod_imagev: String = ""
     var prod_namev: String = ""
     var prod_producerv: String = ""
@@ -42,11 +44,14 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func likeBtnAction(_ sender: Any) {
+        guard let LCS = Like_Checker_Service else {
+            return
+        }
         if prod_like.isSelected == true {
-            Like_Checker_Instance.deleteItem(id: Int16(prod_id))
+            LCS.deleteItem(id: Int16(prod_id))
             prod_like.isSelected = false
         }else{
-            Like_Checker_Instance.createItem(id: Int16(prod_id))
+            LCS.createItem(id: Int16(prod_id))
             prod_like.isSelected = true
         }
     }
