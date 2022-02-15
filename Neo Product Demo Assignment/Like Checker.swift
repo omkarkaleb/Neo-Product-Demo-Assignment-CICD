@@ -33,7 +33,10 @@ class LikeChecker {
         }
         return tt
     }
-    func createItem(id: Int16){
+    func createItem(id: Int16) throws -> String{
+        if id == 0 {
+            throw ValidationErrors.emptyID
+        }
         let newItem = Prod_item(context: context)
         newItem.id = id
         do {
@@ -41,8 +44,12 @@ class LikeChecker {
         } catch {
             //error
         }
+        return "\(id)"
     }
-    func deleteItem(id: Int16){
+    func deleteItem(id: Int16) throws -> String{
+        if id == 0 {
+            throw ValidationErrors.emptyID
+        }
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Prod_item")
         let filter = "\(id)"
         let predicate = NSPredicate(format: "id = %@", filter)
@@ -55,6 +62,7 @@ class LikeChecker {
         } catch  {
             //error
         }
+        return "\(id)"
     }
 }
 
@@ -71,6 +79,6 @@ enum ValidationErrors: LocalizedError {
             return "ID is invalid"
         case .IDLong:
             return "ID is too long"
+        }
     }
-}
 }

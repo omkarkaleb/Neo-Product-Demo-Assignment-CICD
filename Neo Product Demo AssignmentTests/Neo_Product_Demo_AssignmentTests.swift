@@ -9,6 +9,12 @@ import XCTest
 @testable import Neo_Product_Demo_Assignment
 
 class Neo_Product_Demo_AssignmentTests: XCTestCase {
+    
+    var Like_Check_Service = LikeChecker()
+    
+    override func setUp() {
+        Like_Check_Service = LikeChecker()
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,16 +24,9 @@ class Neo_Product_Demo_AssignmentTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_is_valid_ID() throws {
+        XCTAssertNoThrow(try Like_Check_Service.createItem(id: 12))
+        XCTAssertNoThrow(try Like_Check_Service.deleteItem(id: 12))
     }
 
 }

@@ -34,10 +34,18 @@ class ProdListTableViewCell: UITableViewCell {
         guard let LCS = Like_Checker_Service else { return }
         if prodList_like.isSelected == true {
             prodList_like.isSelected = false
-            LCS.deleteItem(id: Int16(product_id))
+            do {
+                try LCS.deleteItem(id: Int16(product_id))
+            } catch {
+                //ERROR
+            }
         }else{
             prodList_like.isSelected = true
-            LCS.createItem(id: Int16(product_id))
+            do {
+                try LCS.createItem(id: Int16(product_id))
+            } catch {
+                //ERROR
+            }
         }
     }
 }

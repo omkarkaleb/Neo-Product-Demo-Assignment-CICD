@@ -48,10 +48,18 @@ class DetailViewController: UIViewController {
             return
         }
         if prod_like.isSelected == true {
-            LCS.deleteItem(id: Int16(prod_id))
+            do {
+                try LCS.deleteItem(id: Int16(prod_id))
+            } catch {
+                //ERROR
+            }
             prod_like.isSelected = false
         }else{
-            LCS.createItem(id: Int16(prod_id))
+            do {
+                try LCS.createItem(id: Int16(prod_id))
+            } catch {
+                //ERROR
+            }
             prod_like.isSelected = true
         }
     }
