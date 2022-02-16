@@ -22,7 +22,6 @@
 		92E2604A27B63FF3007C0B70 /* Prod_item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2604827B63FF3007C0B70 /* Prod_item+CoreDataClass.swift */; };
 		92E2604B27B63FF3007C0B70 /* Prod_item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2604927B63FF3007C0B70 /* Prod_item+CoreDataProperties.swift */; };
 		92E2604D27B64518007C0B70 /* Like Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E2604C27B64518007C0B70 /* Like Checker.swift */; };
-		92E2605127BCDE6A007C0B70 /* NeoDemo.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 92E2605027BCDE6A007C0B70 /* NeoDemo.xcworkspace */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		92E2604827B63FF3007C0B70 /* Prod_item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prod_item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		92E2604927B63FF3007C0B70 /* Prod_item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Prod_item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		92E2604C27B64518007C0B70 /* Like Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Like Checker.swift"; sourceTree = "<group>"; };
-		92E2605027BCDE6A007C0B70 /* NeoDemo.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = NeoDemo.xcworkspace; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 		92E2600327B62769007C0B70 = {
 			isa = PBXGroup;
 			children = (
-				92E2605027BCDE6A007C0B70 /* NeoDemo.xcworkspace */,
 				92E2604827B63FF3007C0B70 /* Prod_item+CoreDataClass.swift */,
 				92E2604927B63FF3007C0B70 /* Prod_item+CoreDataProperties.swift */,
 				92E2600E27B62769007C0B70 /* Neo Product Demo Assignment */,
@@ -257,7 +254,6 @@
 			files = (
 				92E2601F27B6276E007C0B70 /* LaunchScreen.storyboard in Resources */,
 				92E2601C27B6276E007C0B70 /* Assets.xcassets in Resources */,
-				92E2605127BCDE6A007C0B70 /* NeoDemo.xcworkspace in Resources */,
 				92E2601727B62769007C0B70 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
