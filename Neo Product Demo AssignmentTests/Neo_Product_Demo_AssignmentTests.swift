@@ -25,8 +25,8 @@ class Neo_Product_Demo_AssignmentTests: XCTestCase {
     }
 
     func test_is_valid_ID() throws {
-        XCTAssertNoThrow(try Like_Check_Service.createItem(id: 12))
-        XCTAssertNoThrow(try Like_Check_Service.deleteItem(id: 12))
+        XCTAssertNoThrow(try Like_Check_Service.createItem(id: 0))
+        XCTAssertNoThrow(try Like_Check_Service.deleteItem(id: 4))
     }
 
 }

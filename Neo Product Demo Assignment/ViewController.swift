@@ -60,12 +60,12 @@ class ViewController: UIViewController {
             if let response = response{
                 print(response)
             }
-            
+
             if let data = data {
                 do{
                     let pdata = try JSONDecoder().decode(ProductListDataProduct.self, from: data)
                     self.prodlistdata = pdata.data
-                    
+
                     DispatchQueue.main.async {
                         completed()
                     }

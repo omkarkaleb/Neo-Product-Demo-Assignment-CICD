@@ -20,23 +20,3 @@ struct ProductListData: Codable {
     var cost: Int
     var rating: Int
 }
-
-struct ProductDetailDataProduct: Codable {
-    var data: ProductDetailData
-}
-
-struct ProductDetailData: Codable {
-    var id: Int
-    var name: String
-    var producer: String
-    var description: String
-    var cost: Int
-    var rating: Int
-    var product_images: [ProductDetailImages]
-}
-
-struct ProductDetailImages: Codable {
-    var id: Int
-    var product_id: Int
-    var image: String
-}
